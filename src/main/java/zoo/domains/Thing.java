@@ -8,7 +8,7 @@ public class Thing implements IInventory {
     private final int number;
 
     public Thing(int thingNumber) {
-        assert thingNumber < 0;
+        assert thingNumber > 0;
         number = thingNumber;
     }
 }

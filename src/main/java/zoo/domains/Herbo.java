@@ -8,7 +8,7 @@ public class Herbo extends Animal {
 
     public Herbo(int consumedFood, int animalKindness) {
         super(consumedFood);
-        assert animalKindness <= 0;
+        assert animalKindness > 0;
         kindness = animalKindness;
     }
 }

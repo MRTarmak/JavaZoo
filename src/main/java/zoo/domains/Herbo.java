@@ -10,4 +10,8 @@ public class Herbo extends Animal {
         super(consumedFood);
         kindness = animalKindness;
     }
+
+    public boolean isKind() {
+        return kindness > 5;
+    }
 }

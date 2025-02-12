@@ -10,4 +10,14 @@ public class Animal implements IAlive {
     public Animal(int consumedFood) {
         food = consumedFood;
     }
+
+    @Override
+    public void saySomething() {
+        System.out.println("What am I?..");
+    }
+
+    @Override
+    public String getKind() {
+        return "Unknown animal";
+    }
 }

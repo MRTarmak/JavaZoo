@@ -11,4 +11,9 @@ public class Monkey extends Herbo {
     public void saySomething() {
         System.out.println("U-u-a-a");
     }
+
+    @Override
+    public String getKind() {
+        return "Monkey";
+    }
 }

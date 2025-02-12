@@ -11,4 +11,9 @@ public class Rabbit extends Herbo {
     public void saySomething() {
         System.out.println("*Purring*");
     }
+
+    @Override
+    public String getKind() {
+        return "Rabbit";
+    }
 }

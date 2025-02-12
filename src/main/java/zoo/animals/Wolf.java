@@ -11,4 +11,9 @@ public class Wolf extends Predator {
     public void saySomething() {
         System.out.println("*Howl*");
     }
+
+    @Override
+    public String getKind() {
+        return "Wolf";
+    }
 }

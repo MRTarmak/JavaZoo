@@ -11,4 +11,9 @@ public class Tiger extends Predator {
     public void saySomething() {
         System.out.println("*Growl*");
     }
+
+    @Override
+    public String getKind() {
+        return "Tiger";
+    }
 }

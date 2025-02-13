@@ -2,22 +2,30 @@ package zoo.domains;
 
 import lombok.Getter;
 import zoo.interfaces.IAlive;
+import zoo.interfaces.IInventory;
 
-@Getter
-public class Animal implements IAlive {
-    private final int food;
+public class Animal implements IAlive, IInventory {
+    @Getter
+    private final String name;
 
-    public Animal(int consumedFood) {
-        food = consumedFood;
+    private final int number;
+
+    public Animal(String animalName, int animalNumber) {
+        name = animalName;
+        number = animalNumber;
     }
 
-    @Override
-    public void saySomething() {
-        System.out.println("What am I?..");
-    }
-
-    @Override
     public String getKind() {
         return "Unknown animal";
+    }
+
+    @Override
+    public int getFood() {
+        return 0;
+    }
+
+    @Override
+    public int getNumber() {
+        return number;
     }
 }

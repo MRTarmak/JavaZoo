@@ -3,17 +3,19 @@ package zoo.animals;
 import zoo.domains.Herbo;
 
 public class Monkey extends Herbo {
-    public Monkey(int consumedBananas, int monkeyKindness) {
-        super(consumedBananas, monkeyKindness);
-    }
+    private static final int food = 1;
 
-    @Override
-    public void saySomething() {
-        System.out.println("U-u-a-a");
+    public Monkey(String monkeyName, int monkeyNumber, int monkeyKindness) {
+        super(monkeyName, monkeyNumber, monkeyKindness);
     }
 
     @Override
     public String getKind() {
         return "Monkey";
+    }
+
+    @Override
+    public int getFood() {
+        return food;
     }
 }

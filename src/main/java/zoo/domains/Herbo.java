@@ -1,13 +1,10 @@
 package zoo.domains;
 
-import lombok.Getter;
-
-@Getter
 public class Herbo extends Animal {
     private final int kindness;
 
-    public Herbo(int consumedFood, int animalKindness) {
-        super(consumedFood);
+    public Herbo(String animalName, int animalNumber, int animalKindness) {
+        super(animalName, animalNumber);
         kindness = animalKindness;
     }
 

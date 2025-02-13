@@ -1,7 +1,5 @@
 package zoo.interfaces;
 
 public interface IAlive {
-    void saySomething();
-
-    String getKind();
+    int getFood();
 }

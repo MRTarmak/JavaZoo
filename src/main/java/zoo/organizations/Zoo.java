@@ -64,8 +64,6 @@ public class Zoo {
     public String getReport() {
         StringBuilder report = new StringBuilder();
 
-        report.append("=====================\n");
-
         report.append("Animals count by kinds: \n");
 
         kinds.forEach(kind -> {
@@ -75,15 +73,11 @@ public class Zoo {
 
         report.append("Total: ").append(animals.size()).append("\n");
 
-        report.append("=====================");
-
         return report.toString();
     }
 
     public String getFoodReport() {
         StringBuilder report = new StringBuilder();
-
-        report.append("=====================\n");
 
         report.append("Food count by kinds: \n");
 
@@ -101,15 +95,11 @@ public class Zoo {
 
         report.append("Total: ").append(totalCount).append("kg\n");
 
-        report.append("=====================");
-
         return report.toString();
     }
 
     public String getContactReport() {
         StringBuilder report = new StringBuilder();
-
-        report.append("=====================\n");
 
         report.append("The list of kind animals: \n");
 
@@ -121,15 +111,11 @@ public class Zoo {
                         .append(herbo.getKind()).append(" ")
                         .append(herbo.getName()).append("\n"));
 
-        report.append("=====================");
-
         return report.toString();
     }
 
     public String getInventoryReport() {
         StringBuilder report = new StringBuilder();
-
-        report.append("=====================\n");
 
         report.append("The list of all animals: \n");
         animals.forEach(animal -> report.append(animal.getNumber()).append(" ")
@@ -139,8 +125,6 @@ public class Zoo {
         report.append("The list of all things: \n");
         things.forEach(thing -> report.append(thing.getNumber()).append(" ")
                 .append(thing.getType()).append("\n"));
-
-        report.append("=====================");
 
         return report.toString();
     }

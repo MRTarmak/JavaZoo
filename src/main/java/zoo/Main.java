@@ -17,66 +17,81 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+        String command;
+        String kind = "";
+        String name = "";
+        String type = "";
+
         printer.printHint();
         while(true) {
-            String command = scanner.next();
-            String kind, name;
+            if (scanner.hasNext()) {
+                command = scanner.next();
 
-            switch (command) {
-                case "help":
-                    printer.printHelp();
-                    break;
-                case "addp":
-                    kind = scanner.next();
-                    name = scanner.next();
-                    try {
-                        if (zoo.addAnimal(kind.toLowerCase(), name.toUpperCase(), 1))
-                            printer.printAddaSuccess();
-                        else
-                            printer.printAddaFailure();
-                    } catch (Exception exception) {
-                        printer.printException(exception);
-                    }
-                    break;
-                case "addh":
-                    kind = scanner.next();
-                    name = scanner.next();
-                    int kindness = scanner.nextInt();
-                    try {
-                        if (zoo.addAnimal(kind.toLowerCase(), name.toUpperCase(), kindness))
-                            printer.printAddaSuccess();
-                        else
-                            printer.printAddaFailure();
-                    } catch (Exception exception) {
-                        printer.printException(exception);
-                    }
-                    break;
-                case "addi":
-                    String type = scanner.next();
-                    try {
-                        zoo.addInventory(type.toLowerCase());
-                    } catch (Exception exception) {
-                        printer.printException(exception);
-                    }
-                    printer.printAddiSuccess();
-                    break;
-                case "report":
-                    printer.printReport(zoo.getReport());
-                    break;
-                case "food":
-                    printer.printReport(zoo.getFoodReport());
-                    break;
-                case "contact":
-                    printer.printReport(zoo.getContactReport());
-                    break;
-                case "inventory":
-                    printer.printReport(zoo.getInventoryReport());
-                    break;
-                case "exit":
-                    return;
-                default:
-                    printer.printUnknownCommand();
-                    break;
+                switch (command) {
+                    case "help":
+                        printer.printHelp();
+                        break;
+                    case "addp":
+                        if (scanner.hasNext())
+                            kind = scanner.next();
+                        if (scanner.hasNext())
+                            name = scanner.next();
+
+                        try {
+                            if (zoo.addAnimal(kind.toLowerCase(), name.toUpperCase(), 1))
+                                printer.printAddaSuccess();
+                            else
+                                printer.printAddaFailure();
+                        } catch (Exception exception) {
+                            printer.printException(exception);
+                        }
+                        break;
+                    case "addh":
+                        if (scanner.hasNext())
+                            kind = scanner.next();
+                        if (scanner.hasNext())
+                            name = scanner.next();
+
+                        int kindness = scanner.nextInt();
+                        try {
+                            if (zoo.addAnimal(kind.toLowerCase(), name.toUpperCase(), kindness))
+                                printer.printAddaSuccess();
+                            else
+                                printer.printAddaFailure();
+                        } catch (Exception exception) {
+                            printer.printException(exception);
+                        }
+                        break;
+                    case "addi":
+                        if (scanner.hasNext())
+                            type = scanner.next();
+
+                        try {
+                            zoo.addInventory(type.toLowerCase());
+                        } catch (Exception exception) {
+                            printer.printException(exception);
+                        }
+                        printer.printAddiSuccess();
+                        break;
+                    case "report":
+                        printer.printReport(zoo.getReport());
+                        break;
+                    case "food":
+                        printer.printReport(zoo.getFoodReport());
+                        break;
+                    case "contact":
+                        printer.printReport(zoo.getContactReport());
+                        break;
+                    case "inventory":
+                        printer.printReport(zoo.getInventoryReport());
+                        break;
+                    case "exit":
+                        scanner.close();
+                        return;
+                    default:
+                        printer.printUnknownCommand();
+                        break;
+                }
             }
         }
     }
